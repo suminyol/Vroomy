@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
-import { useLocation } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import Home from './pages/Home';
+import CarDetails from './pages/CarDetails';
+import MyBookings from './pages/MyBookings';
+import Cars from './pages/Cars';
+import Footer from './components/Footer';
 
 function App() {
   const [showLogin,setShowLogin]=useState(false);
@@ -8,6 +13,15 @@ function App() {
   return (
     <>
     {!isOwnerPath && <Navbar setShowLogin={setShowLogin}/> }
+
+    <Routes>
+      <Route path='/' element={<Home/>} />
+      <Route path='/car-details/:id' element={<CarDetails/>} />
+      <Route path='/cars' element={<Cars/>} />
+      <Route path='/my-bookings' element={<MyBookings/>} />
+
+    </Routes>
+   { isOwnerPath && <Footer/>}
     </>
   );
 }
