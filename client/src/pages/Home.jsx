@@ -4,7 +4,7 @@ import FeaturedSection from '../components/FeaturedSection';
 import Banner from '../components/Banner';
 import Testimonial from '../components/Testimonial';
 import Newsletter from '../components/NewsLetter';
-import Footer from '../components/Footer';
+
 
 function Home() {
     return (
@@ -14,7 +14,7 @@ function Home() {
         <Banner/>
         <Testimonial/>
         <Newsletter/> 
-        <Footer/>
+    
         </>
     );
 }

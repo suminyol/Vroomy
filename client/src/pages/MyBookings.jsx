@@ -3,6 +3,7 @@ import { assets } from '../assets/assets';
 import Title from '../components/Title';
 import { useAppContext } from '../context/Appcontext';
 import toast from 'react-hot-toast';
+import {motion} from 'motion/react'
 
 function MyBookings() {
   const {axios,user,currency}=useAppContext();
@@ -25,11 +26,17 @@ function MyBookings() {
     user && fetchMyBookings()
   },[user])
   return (
-      <div className='px-6 md:px-16 lg:px-24 xl:px-32 2xl:px-48 mt-16 text-sm max-w-7xl'>
+      <motion.div initial={{opacity:0,y:30}}
+                        whileInView={{opacity:1,y:0}}
+                        transition={{duration:0.6}}
+      className='px-6 md:px-16 lg:px-24 xl:px-32 2xl:px-48 mt-16 text-sm max-w-7xl'>
       <Title title='My Bookings' subTitle='View and manage all your car bookings' align="left"/>
       <div>
         {bookings.map((booking,index)=>(
-          <div key={booking._id} className='grid grid-cols-1 md:grid-cols-4 gap-6 p-6 border border-borderColor rounded-lg mt-5 first:mt-12'>
+          <motion.div initial={{opacity:0,y:20}}
+                        whileInView={{opacity:1,y:0}}
+                        transition={{delay:0.1*index, duration:0.4}}
+           key={booking._id} className='grid grid-cols-1 md:grid-cols-4 gap-6 p-6 border border-borderColor rounded-lg mt-5 first:mt-12'>
             {/* Car Img+Info*/}
             <div className='md:col-span-1'>
               <div className='rounded-md overflow-hidden mb-3'>
@@ -70,10 +77,10 @@ function MyBookings() {
                   <p>Booked on {booking.createdAt.split('T')[0]}</p>
                 </div>
                </div>
-          </div>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
 
