@@ -118,19 +118,12 @@ function AddCar() {
                     <option value="Sedan">Sedan</option>
                     <option value="SUV">SUV</option>
                     <option value="Van">Van</option>
+                    <option value="Hatchback">Hatchback</option>
+                    <option value="Luxury">Luxury</option>
+                    
                 </select>
                 </div> 
-                 <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-white">
-    <svg
-      className="w-4 h-4"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      viewBox="0 0 24 24"
-    >
-      <path d="M19 9l-7 7-7-7" />
-    </svg>
-  </div> 
+                  
             </div>
 
             {/* Car Transmission fuel type and seating capacity  */}
@@ -161,9 +154,9 @@ function AddCar() {
 
                 <div className='flex flex-col w-full'>
                 <label>Seating Capacity</label>
-                <input type="number" placeholder='4' required 
+                <input type="number" placeholder='4' min={1} required 
                 className='px-3 py-2 mt-2 border border-[var(--color-borderColor)] rounded-md outline-none' 
-                value={car.seating_capacity} onChange={e=> setCar({...car, seating_capacity:e.target.value})} />
+                value={car.seating_capacity} onChange={e=> setCar({...car, seating_capacity:parseInt(e.target.value)})} />
                 </div>  
             </div>
 
