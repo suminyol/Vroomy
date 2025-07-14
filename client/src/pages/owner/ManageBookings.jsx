@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import { useEffect } from 'react'
 import Title from '../../components/owner/Title'
-import { useAppContext } from '../../context/Appcontext'
+import { useAppContext } from '../../context/AppContext'
 import toast from 'react-hot-toast'
 
 
