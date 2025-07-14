@@ -24,12 +24,12 @@ export const checkAvailabilityofCar = async (req, res) =>{
         const {location, pickupDate, returnDate} = req.body
         
         //fetch all available cars for given location
-        const cars = await Car.find({location, isAvaliable: true})
+        const cars = await Car.find({location, isAvailable: true})
 
         //check car availability for the given date range using promise
         const availableCarsPromises =  cars.map(async (car) => {
-            await checkAvailability(Car._id, pickupDate, returnDate)
-            return{...car._doc, isAvailable: isAvailable}
+            const isAvailable = await checkAvailability(car._id, pickupDate, returnDate)
+                return{...car._doc, isAvailable: isAvailable}
         })
 
         let availableCars = await Promise.all(availableCarsPromises);
@@ -51,11 +51,11 @@ export const createBooking = async (req, res) =>{
         const{car, pickupDate, returnDate} = req.body;
 
         const isAvailable = await checkAvailability(car, pickupDate, returnDate)
-        if(isAvailable){
+        if(!isAvailable){
             return res.json({success: false, message:"Car is not available"})
         }
 
-        const carData = await car.findbyId(car)
+        const carData = await Car.findById(car)
 
         //Calulate price based on pickupdate and returndate
         const picked = new Date(pickupDate);
