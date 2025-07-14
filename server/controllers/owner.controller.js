@@ -1,5 +1,5 @@
 import path from "path";
-import imagekit from "../configs/imagekit.config.js";
+import imagekit from "../configs/imageKit.config.js";
 import Booking from "../models/Booking.model.js";
 import Car from "../models/Car.model.js";
 import User from "../models/User.model.js";
