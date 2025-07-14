@@ -32,16 +32,16 @@ const Navbar=({} ) =>{
         transition={{duration:0.3}}
         className={
             `flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 
-                  text-gray-600 border-b border-borderColor relative transition-all 
-                  ${location.pathname==="/" && "bg-light"}`}>
+                  text-white border-b border-borderColor relative transition-all 
+                  ${location.pathname==="/" && "bg-transparent"}`}>
             <Link to='/'>
-            <motion.img whileHover={{scale:1.05}} src={assets.logo} alt="logo" className='h-8'/>
+            <motion.img whileHover={{scale:1.05}} src={assets.logo} alt="logo" className=" h-11  object-contain mr-4"/>
             </Link>
 
             <div className={`max-sm:fixed max-sm:h-screen max-sm:w-full max-sm:top-16 max-sm:right-0
                     max-sm:border-t border-borderColor flex flex-col sm:flex-row 
                     items-start sm:items-center gap-4 sm:gap-8 max-sm:p-4 transition-all
-                    duration-300 z-50 ${location.pathname==="/"?"bg-light":"bg-white"} ${open?"max-sm:translate-x-0":"max-sm:translate-x-full"}`} >
+                    duration-300 z-50 ${location.pathname==="/"?"bg-light":"bg-light"} ${open?"max-sm:translate-x-0":"max-sm:translate-x-full"}`} >
                 {
                     menuLinks.map((link,index)=>(
                         <Link key={index} to={link.path} >
@@ -52,7 +52,7 @@ const Navbar=({} ) =>{
             </div>
 
             <div className='hidden lg:flex items-center text-sm gap-2 border border-borderColor px-3 rounded-full max-w-56'>
-                <input type="text"  className="py-1.5 w-full bg-transparent outline-none placeholder-gray-500" placeholder='Search Vehicles' />
+                <input type="text"  className="py-1.5 w-full bg-transparent outline-none placeholder-white" placeholder='Search Vehicles' />
                 <img src={assets.search_icon} alt="" />
             </div>
 
@@ -60,6 +60,7 @@ const Navbar=({} ) =>{
                 <button onClick={()=>{isOwner?navigate('/owner'):changeRole()}} className='cursor-pointer'>{isOwner?'Dashboard':"List cars"}</button>
                 <button onClick={()=>{user?logout(): setShowLogin(true)}} className="cursor-pointer px-8 py-2 bg-primary hover:bg-primary-dull transition-all text-white rounded-lg">{user?'Logout':'Login'}</button>
             </div>
+            
  
                 <button className="sm:hidden cursor-pointer" onClick={() => setOpen(!open)}>
                 <img src={open ? assets.close_icon : assets.menu_icon} alt="menu" />

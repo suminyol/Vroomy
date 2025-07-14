@@ -51,7 +51,7 @@ function Dashboard() {
                 {dashboardCards.map((card,index)=>(
                     <div key={index} className='flex gap-2 items-center justify-between p-4 rounded-md border border-[var(--color-borderColor)]'>
                         <div>
-                    <h1 className='text-xs text-gray-500'>{card.title}</h1>   
+                    <h1 className='text-xs text-white'>{card.title}</h1>   
                      <p className='text-lg font-semibold'>{card.value}</p>   
                         </div>
                         <div className='flex items-center justify-center w-10 h-10 rounded-full bg-[var(--color-light)]'>
@@ -64,7 +64,7 @@ function Dashboard() {
                     {/* recent booking */}
                     <div className='p-4 md:p-6 border border-[var(--color-borderColor)] rounded-md max-w-lg w-full'>
                 <h1 className='text-lg font-medium'>Recent Bookings</h1>
-                <p className='text-gray-500'>Latest customer bookings</p>
+                <p className='text-white'>Latest customer bookings</p>
                 {data.recentBookings.map((booking,index)=>(
                     <div key={index} className='mt-4 flex items-center justify-between'>
                         <div className='flex items-center gap-2'>
@@ -73,11 +73,11 @@ function Dashboard() {
                             </div>
                             <div>
                                 <p>{booking.car.brand} {booking.car.model} </p>
-                                <p className='text-sm text-gray-500'>{booking.createdAt.split('T')[0]} </p>
+                                <p className='text-sm text-white'>{booking.createdAt.split('T')[0]} </p>
                             </div>
                         </div>
                         <div className='flex items-center gap-2 font-medium'>
-                            <p className='text-sm text-gray-500'>{currency}{booking.price}</p>
+                            <p className='text-sm text-white'>{currency}{booking.price}</p>
                             <p className='px-3 py-0.5 border border-borderColor rounded-full text-sm'>{booking.status}</p>
                         </div>
                     </div>
@@ -87,7 +87,7 @@ function Dashboard() {
                     {/* monthly revenue */}
                     <div className='p-4 md:p-6 mb-6 border border-[var(--color-borderColor)] rounded-md w-full md:max-w-xs'>
             <h1 className='text-lg font-medium'>Monthly Revenue</h1>
-            <p className='text-gray-500'>Revenue for current month</p>
+            <p className='text-white'>Revenue for current month</p>
             <p className='text-3xl mt-6 font-semibold text-[var(--color-primary)]'>{currency} {data.monthlyRevenue}</p>
             </div>
                 </div>

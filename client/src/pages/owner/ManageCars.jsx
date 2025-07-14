@@ -60,8 +60,8 @@ function ManageCars(){
         <Title title="Manage Cars" subTitle="View all listed cars, update their details, or remove them from the booking platform."/>
 
         <div className='max-w-3xl w-full rounded-md overflow-hidden border border-[var(--color-borderColor)] mt-6'>
-            <table className='w-full border-collapse text-left text-sm text-gray-600'>
-                <thead className='text-gray-500'>
+            <table className='w-full border-collapse text-left text-sm text-white'>
+                <thead className='text-white'>
                     <tr>
                         <th className='p-3 font-medium'>Car</th>
                         <th className='p-3 font-medium max-md:hidden'>Category</th>
@@ -78,7 +78,7 @@ function ManageCars(){
                                 <img src={car.image} alt="" className='h-12 w-12 aspect-square rounded-md object-cover' />
                                 <div className='max-md:hidden'>
                                     <p className='font-medium'>{car.brand} {car.model}</p>
-                                    <p className='text-xs text-gray-500'>{car.seating_capacity} . {car.transmission}</p>
+                                    <p className='text-xs text-white'>{car.seating_capacity} . {car.transmission}</p>
                                 </div>
                             </td>
 
@@ -93,8 +93,8 @@ function ManageCars(){
                             </td>
 
                             <td className='flex items-center p-3'>
-                                <img onClick={()=>toggleAvailability(car._id)} src={car.isAvailable ? assets.eye_close_icon : assets.eye_icon} alt="" className='cursor-pointer' />
-                                <img onClick={()=>deleteCar(car._id)} src={assets.delete_icon} alt="" className='cursor-pointer' />
+                                <img onClick={()=>toggleAvailability(car._id)} src={car.isAvailable ? assets.eye_close_icon : assets.eye_icon} alt="" className='h-10 pb-2.5 cursor-pointer' />
+                                <img onClick={()=>deleteCar(car._id)} src={assets.delete_icon} alt="" className='h-9 pb-2.5 cursor-pointer' />
                             </td>
                         </tr>
                     ))}

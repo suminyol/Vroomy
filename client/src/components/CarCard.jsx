@@ -9,7 +9,7 @@ function CarCard({car}) {
         <div onClick={()=>{
             navigate(`/car-details/${car._id}`);
             scrollTo(0,0 )
-        }} className='group rounded-xl overflow-hidden shadow-lg flex flex-col justify-between h-full hover:-translate-y-1
+        }} className='group rounded-xl bg-[#E2E8F0] overflow-hidden shadow-lg flex flex-col justify-between h-full hover:-translate-y-1
                     transition-all duration-500 cursor-pointer'> 
                     <div className='relative h-48 overflow-hidden'> 
                         <img src={car.image} alt="Car Image" className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-105' />

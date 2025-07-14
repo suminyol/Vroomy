@@ -37,8 +37,8 @@ function CarDetails() {
     },[cars,id])
     return car? (
         <div className='px-6 md:px-16 lg:px-24 xl:px-32 mt-16'>
-                <button onClick={()=> navigate(-1 )} className='f1ex items-center gap-2 mb-6
-                text-gray-500 cursor-pointer' >
+                <button onClick={()=> navigate(-1 )} className='flex items-center gap-2 mb-6
+                 cursor-pointer' >
                 < img src={assets.arrow_icon} alt=""
                 className=' rotate-180 opacity-65'/>
                 Back to all cars
@@ -58,7 +58,7 @@ function CarDetails() {
                          className='space-y-6'>
                         <div>
                         <h1 className='text-3xl font-bold'>{car.brand} {car.model}</h1>
-                        <p className='text-gray-500 text-lg'>{car.category} • {car. year} </p>
+                        <p className='text-white text-lg'>{car.category} • {car. year} </p>
                         </div>
                         <hr className='border-borderColor my-6'/>
                         <div className='grid grid-cols-2 sm:grid-cols-4 gap-4'>
@@ -73,14 +73,14 @@ function CarDetails() {
                                     transition={{duration:0.4}}
                                  key={text} className='flex flex-col items-center bg-light p-4 rounded-lg'>
                                     <img src={icon} alt="" className='h-5 mb-2' />
-                                         <p className='text-gray-700 text-sm'>{text}</p>
+                                         <p className='text-white text-sm'>{text}</p>
                                 </motion.div>
                             ))}
                         </div>
                         {/*Description*/}
                         <div>
                             <h1 className='text-xl font-medium mb-3'>Description</h1>
-                            <p className='text-gray-500'>{car.description}</p>
+                            <p className='text-white'>{car.description}</p>
                         </div>
                         {/* {Features} */}
                         <div>
@@ -91,7 +91,7 @@ function CarDetails() {
                                 "Bluetooth", "GPS",
                                 , "Heated Seats",
                                 "Mirror"] .map((item)=>(
-                                < li key={item}  className= 'flex items-center text-gray-500'>
+                                < li key={item}  className= 'flex items-center text-white'>
                             < img src={assets.check_icon} className='h-4 mr-2' alt=""/>
                             {item}
                             </li>
@@ -106,8 +106,8 @@ function CarDetails() {
                         <motion.form initial={{opacity:0,y:30}}
                         whileInView={{opacity:1,y:0}}
                         transition={{delay:0.3, duration:0.6}}
-                          onSubmit={handleSubmit}  className='shadow-lg h-max sticky top-18 rounded-xl p-6 space-y-6 text-gray-500'>
-                           <p className='flex items-center justify-between text-2xl text-gray-800 font-semibold'>{currency}{car.pricePerDay} <span className='text-base text-gray-400 font-normal'>per day</span> </p>
+                          onSubmit={handleSubmit}  className='shadow-lg h-max sticky top-18 rounded-xl p-6 space-y-6 text-white'>
+                           <p className='flex items-center justify-between text-2xl text-white font-semibold'>{currency}{car.pricePerDay} <span className='text-base text-white font-normal'>per day</span> </p>
                            <hr className='border-borderColor my-6'/>
                            <div className='flex flex-col gap-2'>
                             <label htmlFor="pickup-date">Pickup Date</label>

@@ -7,9 +7,15 @@
   font-family: "Martel Sans", sans-serif;
 }
 
-@theme{
-  --color-primary:#2563EB;
-  --color-primary-dull:#1F58D8;
-  --color-light:#F1F5F9;
-  --color-borderColor:#c4c7d2;
+@theme {
+  --color-primary: #2BC0A4; /* Logo green */
+  --color-secondary: #F59E0B; /* Tagline orange */
+  --color-dark: #1E4D4D;    /* Logo text shadow/dark border */
+  --color-light: #0F172A;   /* Background */
+  --color-borderColor: #FBBF24; /* Neutral border */
+}
+
+body {
+  @apply bg-[#0F172A]; /* example deep teal */
+  color: #FBBF24; /* example light gray */
 }

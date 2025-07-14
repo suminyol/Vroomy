@@ -8,7 +8,7 @@ function Footer( ) {
             initial={{opacity:0,y:30}}
             whileInView={{opacity:1,y:0}}
             transition={{duration:0.6}}
-       className='px-6 md:px-16 lg:px-24 xl:px-32 mt-60 text-sm text-gray-500'>
+       className='px-6 md:px-16 lg:px-24 xl:px-32 mt-60 text-sm text-white'>
             <motion.div 
             initial={{opacity:0,y:20}}
             whileInView={{opacity:1,y:0}}
@@ -43,7 +43,7 @@ function Footer( ) {
                         transition={{duration:0.6,delay:0.4}} 
                  className='flex flex-wrap justify-between w-1/2 gap-8'>
                 <div>
-                    <h2 className='text-base font-medium text-gray-800 uppercase'>Quick Links</h2>
+                    <h2 className='text-base font-medium text-white uppercase'>Quick Links</h2>
                     <ul className='mt-3 flex flex-col gap-1.5 '>
                         <li><a href="#">Home</a></li>
                         <li><a href="#">Browse Cars</a></li>
@@ -52,7 +52,7 @@ function Footer( ) {
                     </ul>
                 </div>
                 <div>
-                    <h2 className='text-base font-medium text-gray-800 uppercase'>Resources</h2>
+                    <h2 className='text-base font-medium text-white uppercase'>Resources</h2>
                     <ul className='mt-3 flex flex-col gap-1.5 '>
                         <li><a href="#">Help Center</a></li>
                         <li><a href="#">Terms of Service</a></li>
@@ -61,7 +61,7 @@ function Footer( ) {
                     </ul>
                 </div>
                 <div>
-                    <h2 className='text-base font-medium text-gray-800 uppercase'>Contact</h2>
+                    <h2 className='text-base font-medium text-white uppercase'>Contact</h2>
                     <ul className='mt-3 flex flex-col gap-1.5 '>
                         <li>203 Sector-12</li>
                         <li>Chandigarh,India</li>

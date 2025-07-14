@@ -43,7 +43,7 @@ const ManageBookings = () => {
 
     <div className='max-w-3xl w-full rounded-md overflow-hidden border border-[var(--color-borderColor)] mt-6'>
         <table className='w-full border-collapse text-left text-sm text-gray-600'>
-            <thead className='text-gray-500'>
+            <thead className='text-white'>
                 <tr>
                     <th className='p-3 font-medium'>Car</th>
                     <th className='p-3 font-medium max-md:hidden'>Date Range</th>
@@ -55,7 +55,7 @@ const ManageBookings = () => {
 
             <tbody>
                 {bookings.map((booking, index) => (
-                    <tr key={index} className='border-t border-[var(--color-borderColor)] text-gray-500 '>
+                    <tr key={index} className='border-t border-[var(--color-borderColor)] text-white '>
                         <td className='p-3 flex items-center gap-3'>
                             <img src={booking.car.image} alt="" className='h-12 w-12 aspect-square rounded-md object-cover' />
                             <p className='font-medium max:md-hidden'>{booking.car.brand} {booking.car.model}</p>
@@ -70,14 +70,14 @@ const ManageBookings = () => {
                         </td>
 
                         <td className='p-3 max-md:hidden'>
-                            <span className='bg-gray-100 px-3 py-1 rounded-full text-xs'>
+                            <span className='bg-yellow-100 px-3 py-1 rounded-full text-xs text-black'>
                                 offline
                             </span>
                         </td>
 
                         <td className='p-3'>
                             {booking.status === 'pending' ? (
-                                <select onChange={(e)=>changeBookingStatus(booking._id,e.target.value)} value={booking.status} className='px-2 py-1.5 mt-1 text-gray-500 border border-[var(--color-borderColor)]
+                                <select onChange={(e)=>changeBookingStatus(booking._id,e.target.value)} value={booking.status} className='px-2 py-1.5 mt-1 text-yellow-400 border border-[var(--color-borderColor)]
                                 rounded-md outline-none'>
                                     <option value="pending">Pending</option>
                                     <option value="cancelled">Cancelled</option>

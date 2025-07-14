@@ -44,9 +44,9 @@ function FeaturedSection() {
                         transition={{delay:0.6,duration:0.4}}
                 onClick={()=>{
                     navigate('/cars'); scrollTo(0,0)
-                }} className='f1ex items-center  justify-center gap-2 px-6 py-2 border
+                }} className='flex items-center  justify-center gap-2 px-7 py-2 border
                      border-borderColor hover:bg-gray-50 rounded-md mt-18 cursor-pointer' >
-                Explore all cars<img src={assets.arrow_icon} alt="" />
+                Explore all cars<img src={assets.arrow_icon} alt="" className='h-5' />
             </motion.button>
         </motion.div>
     );

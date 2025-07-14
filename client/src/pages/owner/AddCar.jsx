@@ -63,7 +63,7 @@ function AddCar() {
         <div className='px-4 py-10 md:px-10 flex-1'>
         <Title title="Add New Car" subTitle="Fill in details to list a new car fo booking, including pricing, availability, and car specifications"/>
 
-        <form onSubmit={onSubmitHandler} className='flex flex-col gap-5 text-gray-500 text-sm mt-6 max-w-xl'>
+        <form onSubmit={onSubmitHandler} className='flex flex-col gap-5 text-white text-sm mt-6 max-w-xl'>
 
             {/* car image */}
              <div className='flex items-center gap-2 w-full'>
@@ -72,7 +72,7 @@ function AddCar() {
                 <input type="file" id='car-image' accept='image/*' hidden onChange={e => setImage(e.target.files[0])}/>
                 </label>
 
-                <p className='text-sm text-gray-500'>Upload a picture of your car</p>
+                <p className='text-sm text-white'>Upload a picture of your car</p>
             </div>
 
             {/* Car Brand and Model  */}
@@ -108,17 +108,29 @@ function AddCar() {
                 className='px-3 py-2 mt-1 border border-[var(--color-borderColor)] rounded-md outline-none' 
                 value={car.pricePerDay} onChange={e=> setCar({...car, pricePerDay:e.target.value})} />
                 </div>  
+                
 
                 <div className='flex flex-col w-full'>
                 <label>Category</label>
                 <select onChange={e=> setCar({...car, category: e.target.value})} 
-                value={car.category} className='px-3 py-2 mt-1 border border-[var(--color-borderColor)] rounded-md outline-none'>
+                value={car.category} className='px-3 py-1 mt-1 bg-[#0e1525] text-white border border-yellow-500 rounded'>
                     <option value="">Select a Category</option>
                     <option value="Sedan">Sedan</option>
                     <option value="SUV">SUV</option>
                     <option value="Van">Van</option>
                 </select>
-                </div>  
+                </div> 
+                 <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-white">
+    <svg
+      className="w-4 h-4"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+    >
+      <path d="M19 9l-7 7-7-7" />
+    </svg>
+  </div> 
             </div>
 
             {/* Car Transmission fuel type and seating capacity  */}
@@ -126,7 +138,7 @@ function AddCar() {
             <div className='flex flex-col w-full'>
                 <label>Transmission</label>
                 <select onChange={e=> setCar({...car, transmission: e.target.value})} 
-                value={car.transmission} className='px-3 py-2 mt-1 border border-[var(--color-borderColor)] rounded-md outline-none'>
+                value={car.transmission} className='px-3 py-2 mt-1 bg-[#0e1525] text-white border border-yellow-500 rounded'>
                     <option value="">Select a Tranmsission</option>
                     <option value="Automatic">Automatic</option>
                     <option value="Manual">Manual</option>
@@ -137,7 +149,7 @@ function AddCar() {
                 <div className='flex flex-col w-full'>
                 <label>Fuel Type</label>
                 <select onChange={e=> setCar({...car, fuel_type: e.target.value})} 
-                value={car.fuel_type} className='px-3 py-2 mt-1 border border-[var(--color-borderColor)] rounded-md outline-none'>
+                value={car.fuel_type} className='px-3 py-2 mt-1  bg-[#0e1525] text-white border border-yellow-500 rounded'>
                     <option value="">Select a fuel type</option>
                     <option value="Gas">Gas</option>
                     <option value="Diesel">Diesel</option>
@@ -150,7 +162,7 @@ function AddCar() {
                 <div className='flex flex-col w-full'>
                 <label>Seating Capacity</label>
                 <input type="number" placeholder='4' required 
-                className='px-3 py-2 mt-1 border border-[var(--color-borderColor)] rounded-md outline-none' 
+                className='px-3 py-2 mt-2 border border-[var(--color-borderColor)] rounded-md outline-none' 
                 value={car.seating_capacity} onChange={e=> setCar({...car, seating_capacity:e.target.value})} />
                 </div>  
             </div>
@@ -159,7 +171,7 @@ function AddCar() {
             <div className='flex flex-col w-full'>
             <label>Location</label>
                 <select onChange={e=> setCar({...car, location: e.target.value})} 
-                value={car.location} className='px-3 py-2 mt-1 border border-[var(--color-borderColor)] rounded-md outline-none'>
+                value={car.location} className='px-3 py-2 mt-1 border bg-[#0e1525] text-white  border-yellow-500 rounded'>
                     <option value="">Select a location</option>
                     <option value="Chandigarh">Chandigarh</option>
                     <option value="New Delhi">New Delhi</option>
