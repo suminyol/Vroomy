@@ -154,7 +154,7 @@ function AddCar() {
 
                 <div className='flex flex-col w-full'>
                 <label>Seating Capacity</label>
-                <input type="number" placeholder='4' min={1} required 
+                <input type="number" placeholder='4' required 
                 className='px-3 py-2 mt-2 border border-[var(--color-borderColor)] rounded-md outline-none' 
                 value={car.seating_capacity} onChange={e=> setCar({...car, seating_capacity:parseInt(e.target.value)})} />
                 </div>  
