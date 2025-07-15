@@ -63,10 +63,10 @@ function Footer( ) {
                 <div>
                     <h2 className='text-base font-medium text-white uppercase'>Contact</h2>
                     <ul className='mt-3 flex flex-col gap-1.5 '>
-                        <li>203 Sector-12</li>
+                        <li>PEC,Sector-12</li>
                         <li>Chandigarh,India</li>
-                        <li> +1 234567890</li>
-                        <li>info@mail.com</li>
+                        <li> +91 819998 10937</li>
+                        <li>vroomy@gmail.com</li>
                     </ul>
                 </div>
                 
@@ -79,7 +79,7 @@ function Footer( ) {
                         transition={{duration:0.6,delay:0.6}}
 
             className='flex flex-col md:flex-row gap-2 items-center justify-between py-5'>
-                <p>© {new Date().getFullYear()} Brand. All rights reserved.</p>
+                <p>© {new Date().getFullYear()} Vroomy. All rights reserved.</p>
                 <ul className='flex items-center gap-4'>
                     <li><a href="#">Privacy</a> </li>
                     <li>|</li>
