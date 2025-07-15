@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { assets } from '../../assets/assets';
+import { assets, cityList } from '../../assets/assets';
 import Title from '../../components/owner/Title';
 import { useAppContext } from '../../context/AppContext';
 import toast from 'react-hot-toast';
@@ -164,16 +164,15 @@ function AddCar() {
             <div className='flex flex-col w-full'>
             <label>Location</label>
                 <select onChange={e=> setCar({...car, location: e.target.value})} 
-                value={car.location} className='px-3 py-2 mt-1 border bg-[#0e1525] text-white  border-yellow-500 rounded'>
+                value={car.location} className=' px-3 py-2 mt-1 border bg-[#0e1525] text-white  border-yellow-500 rounded'>
                     <option value="">Select a location</option>
-                    <option value="Chandigarh">Chandigarh</option>
-                    <option value="New Delhi">New Delhi</option>
-                    <option value="Hisar">Hisar</option>
-                    <option value="Sirsa">Sirsa</option>
+                        {cityList.map((city, idx) => (
+                        <option key={idx} value={city}>{city}</option>
+                    ))}
                 </select>
             </div>
 
-            {/* Location  */}
+            {/* Description  */}
             <div className='flex flex-col w-full'>
             <label>Description</label>
                 <textarea rows={5} placeholder='e.g. A luxurious SUV with a spacious interior and a powerful engine.' required 

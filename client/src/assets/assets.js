@@ -41,7 +41,31 @@ import car_image2 from "./car_image2.png"
 import car_image3 from "./car_image3.png"
 import car_image4 from "./car_image4.png"
 
-export const cityList = ['Chandigarh', 'New Delhi', 'Hisar', 'Sirsa']
+export const cityList = [
+  'New Delhi',
+  'Chandigarh',
+  'Hisar',
+  'Sirsa',
+  'Hanumangarh',
+  'Sangaria',
+  'Noida',
+  'Faridabad',
+  'Gurugram',
+  'Ghaziabad',
+  'Jaipur',
+  'Lucknow',
+  'Agra',
+  'Meerut',
+  'Ambala',
+  'Rohtak',
+  'Panipat',
+  'Amritsar',
+  'Jalandhar',
+  'Patiala',
+  'Karnal',
+  
+]
+
 
 export const assets = {
     logo,
