@@ -12,7 +12,7 @@ function Banner() {
         justify-between px-8 min-md:pl-14 pt-10 bg-gradient-to-r from-[#ff416c] to-[ #ff4b2b] max-w-6xl mx-3 md:mx-auto rounded-2xl overflow-hidden'>
                     <div className='text-white'> 
                         <h2 className='text-3xl font-medium'>Do You Own a Car?</h2> 
-                        <p className='mt-2'>Monetize your vehicle effortlessly by listing it on CarRental.</p>
+                        <p className='mt-2'>Monetize your vehicle effortlessly by listing it on VROOMY.</p>
                         <p className='max-w-130'>We take care of insurance,
                             driver verification and secure payments —
                             so you can earn passive income, stress-free.</p>

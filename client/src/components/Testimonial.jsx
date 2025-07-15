@@ -6,19 +6,19 @@ import {motion} from 'motion/react'
 function Testimonial() {
 
     const testimonials = [
-        { name: "Darren Johnson", 
-            location: "New Delhi,India", 
+        { name: "Abhijeet Poonia", 
+            location: "Chandigarh,India", 
             image:assets.testimonial_image_1, rating: 5, 
-            testimonial: "Exceptional service and attention to detail. Everything was handled professionally and efficiently from start to finish. Highly recommended!" },
+            testimonial: "Rented for a quick trip around Chandigarh and everything went great. Quick booking, responsive team, and the car ran perfectly. 10/10!" },
 
-            { name: "Robin", 
-            location: "Hisar,Haryana", 
+            { name: "Mary Stokes", 
+            location: "New Delhi,India", 
             image:assets.testimonial_image_2, rating: 5, 
-            testimonial: "Exceptional service and attention to detail. Everything was handled professionally and efficiently from start to finish. Highly recommended!" },
-            { name: "Shiva Chaudhary", 
-            location: "Chandigarh, India", 
-            image:assets.testimonial_image_1, rating: 5, 
-            testimonial: "Exceptional service and attention to detail. Everything was handled professionally and efficiently from start to finish. Highly recommended!" },
+            testimonial: "Super chill experience. The car was ready on time, no unnecessary paperwork, and the team was friendly. Loved it!" },
+            { name: "Naveen Gill", 
+            location: "Samain, Haryana", 
+            image:assets.testimonial_image_3, rating: 5, 
+            testimonial: "Booked a car in Hisar and the process couldn’t have been smoother. No stress, just great service and a clean ride. Definitely using it again!" },
     ];
     return (
         <div className="py-28 px-6 md:px-16 lg:px-24 xl:px-44">
