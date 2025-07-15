@@ -17,14 +17,7 @@ function Cars() {
     const returnDate=searchParams.get('returnDate')
 
     const {cars,axios} = useAppContext()
-    console.log("All cars from context:", cars);
-    console.log("pickupDate:", pickupDate);
-console.log("returnDate:", returnDate);
 
-cars.forEach(car => {
-  console.log("Car:", car._id, car.location);
-  console.log("Bookings:", car.bookings);
-});
 
     const[input,setInput]=useState('')
 
