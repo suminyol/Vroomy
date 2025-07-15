@@ -14,6 +14,8 @@ import ManageBookings from './pages/owner/ManageBookings';
 import Login from './components/Login';
 import {Toaster} from 'react-hot-toast'
 import { useAppContext } from './context/AppContext';
+import ScrollToTop from './pages/owner/ScrollToTop';
+import { AnimatePresence, motion } from 'motion/react';
 
 function App() {
   const {showLogin}=useAppContext()
@@ -24,7 +26,9 @@ function App() {
     {showLogin && <Login /> }
     
     {!isOwnerPath && <Navbar /> }
+     <ScrollToTop />
 
+      
     <Routes>
       <Route path='/' element={<Home/>} />
       <Route path='/car-details/:id' element={<CarDetails/>} />
@@ -38,6 +42,7 @@ function App() {
         <Route path='manage-bookings' element={<ManageBookings/>} />
       </Route>
     </Routes>
+      
    { !isOwnerPath && <Footer/>}
     </>
   );

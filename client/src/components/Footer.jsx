@@ -1,5 +1,7 @@
 import React from 'react';
 import { assets } from '../assets/assets';
+import { Link } from 'react-router-dom';
+
 import { motion } from 'motion/react';
 
 function Footer( ) {
@@ -45,9 +47,9 @@ function Footer( ) {
                 <div>
                     <h2 className='text-base font-medium text-white uppercase'>Quick Links</h2>
                     <ul className='mt-3 flex flex-col gap-1.5 '>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Browse Cars</a></li>
-                        <li><a href="#">List Your Yar</a></li>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/cars">Browse Cars</Link></li>
+                        <li><Link to="/owner/add-car">List Your Car</Link></li>
                         <li><a href="#">About Us</a></li>
                     </ul>
                 </div>
