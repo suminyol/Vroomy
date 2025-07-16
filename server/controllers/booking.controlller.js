@@ -84,6 +84,23 @@ export const getUserBookings =  async (req,res) => {
     }
 }
 
+// Api to cancel booking
+export const cancelBooking = async (req, res) => {
+  try {
+    const { bookingId } = req.body;
+    const booking = await Booking.findById(bookingId);
+    if (!booking) return res.json({ success: false, message: "Booking not found" });
+
+    booking.status = "cancelled";
+    await booking.save();
+
+    res.json({ success: true, message: "Booking cancelled" });
+  } catch (err) {
+    res.json({ success: false, message: err.message });
+  }
+};
+
+
 //API to get owner Bookings
 export const getOwnerBookings =  async (req,res) => {
     try {

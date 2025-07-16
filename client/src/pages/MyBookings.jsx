@@ -8,6 +8,8 @@ import {motion} from 'motion/react'
 function MyBookings() {
   const {axios,user,currency}=useAppContext();
   const[bookings, setBookings]=useState([])
+  const [cancelingId, setCancelingId] = useState(null);
+
  
   const fetchMyBookings=async()=>{
     try {
@@ -21,6 +23,28 @@ function MyBookings() {
        toast.error(error.message)
     }
   }
+ const cancelBooking = async (bookingId) => {
+  try {
+    const confirm = window.confirm("Are you sure you want to cancel this booking?");
+    if (!confirm) return;
+
+    setCancelingId(bookingId); // Disable the button
+
+    const { data } = await axios.post('/api/bookings/cancel', { bookingId });
+    if (data.success) {
+      toast.success(data.message);
+      fetchMyBookings(); // Refresh list
+    } else {
+      toast.error(data.message);
+    }
+  } catch (err) {
+    toast.error(err.message);
+  } finally {
+    setCancelingId(null); // Re-enable all buttons
+  }
+};
+
+
 
   useEffect(()=>{
     user && fetchMyBookings()
@@ -76,6 +100,18 @@ function MyBookings() {
                   <h1 className='text-2xl font-semibold text-primary'>{currency}{booking.price}</h1>
                   <p>Booked on {booking.createdAt.split('T')[0]}</p>
                 </div>
+                {booking.status !== 'cancelled' && (
+                  <button
+                    onClick={() => cancelBooking(booking._id)}
+                    disabled={cancelingId === booking._id}
+                    className={`mt-4 px-4 py-1.5 rounded text-sm transition border 
+                                ${cancelingId === booking._id ? 'bg-red-100 text-red-300 border-red-200 cursor-not-allowed' : 'text-red-600 border-red-500 hover:bg-red-50'}`}
+                  >
+                    {cancelingId === booking._id ? 'Cancelling...' : 'Cancel Booking'}
+                  </button>
+                )}
+
+
                </div>
           </motion.div>
         ))}
